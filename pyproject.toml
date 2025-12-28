@@ -6,12 +6,12 @@ build-backend = "setuptools.build_meta"
 # Do not add spaces around the '=' sign for any of the fields
 # preceded by a marker comment as it affects the publish workflow.
 #replace_package_name_marker
-name="dspy"
+name="adapt"
 #replace_package_version_marker
 version="3.1.0b1"
-description = "DSPy"
+description = "Adapt"
 readme = "README.md"
-authors = [{ name = "Omar Khattab", email = "okhattab@stanford.edu" }]
+authors = [{ name = "Hamza Mostafa", email = "hamza.oruba@gmail.com" }]
 license = {file = "LICENSE"}
 requires-python = ">=3.10, <3.15"
 classifiers = [
@@ -75,7 +75,7 @@ exclude = ["tests", "tests.*"]
 dspy = ["primitives/*.js"]
 
 [project.urls]
-homepage = "https://github.com/stanfordnlp/dspy"
+homepage = "https://github.com/metis-mantis/adapt"
 
 [tool.coverage.run]
 branch = true

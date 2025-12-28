@@ -1,4 +1,4 @@
-name: Update DSPy Docs
+name: Build Docs
 
 on:
   push:
@@ -27,20 +27,18 @@ jobs:
           pip install -r requirements.txt
           mkdocs build
 
-  update-docs-subtree:
-    if: github.event_name == 'push' && github.repository == 'stanfordnlp/dspy'
+  build:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          fetch-depth: 0
-      - name: Push docs to separate repo
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.GH_PAT }}
-        with:
-          source-directory: "docs"
-          destination-github-username: "krypticmouse"
-          destination-repository-name: "dspy-docs"
-          user-email: github-actions@github.com
-          target-branch: master
+          python-version: "3.11"
+      - name: Build docs
+        run: |
+          cd docs
+          pip install -r requirements.txt
+          mkdocs build
