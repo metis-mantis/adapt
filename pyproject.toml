@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 #replace_package_name_marker
 name="mantis-adapt"
 #replace_package_version_marker
-version="3.1.0b2"
+version="3.1.0b3"
 description = "Adapt"
 readme = "README.md"
 authors = [{ name = "Hamza Mostafa", email = "hamza.oruba@gmail.com" }]
